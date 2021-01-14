@@ -1,0 +1,38 @@
+<IfModule mod_rewrite.c>
+    <IfModule mod_negotiation.c>
+        Options -MultiViews
+    </IfModule>
+
+    RewriteEngine On
+    # Aplica a sitios migrados
+    #RewriteRule ^([^\/]+)/$ /find-redirect/$1 [L,R=301]
+
+     # Force WWW
+     #RewriteCond %{HTTP_HOST} ^example.com [NC]
+     #RewriteRule ^(.*)$ https://www.example.com/$1 [L,R=301]
+
+     # Force SSL
+     RewriteCond %{HTTPS} !=on
+     RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # Redirect Trailing Slashes If Not A Folder...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^(.*)/$ /$1 [L,R=301]
+
+    ## Serve Cached Page If Available...
+     RewriteCond %{REQUEST_URI} ^/?$
+     RewriteCond %{DOCUMENT_ROOT}/page-cache/pc__index__pc.html -f
+     RewriteRule .? page-cache/pc__index__pc.html [L]
+     RewriteCond %{DOCUMENT_ROOT}/page-cache%{REQUEST_URI}%{QUERY_STRING}.html -f
+     RewriteRule . page-cache%{REQUEST_URI}.html [L]
+
+
+    # Handle Front Controller...
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteRule ^ index.php [L]
+
+    # Handle Authorization Header
+    RewriteCond %{HTTP:Authorization} .
+    RewriteRule .* - [E=HTTP_AUTHORIZATION:%{HTTP:Authorization}]
+</IfModule>

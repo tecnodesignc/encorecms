@@ -1,0 +1,158 @@
+{
+    "name": "tecnodes/encore",
+    "type": "project",
+    "description": "The Encore Application.",
+    "keywords": [
+        "cms",
+        "encoredcms",
+        "multilingual",
+        "laravel"
+    ],
+    "license": "MIT",
+    "require": {
+        "php": "^7.3|^8.0",
+        "astrotomic/laravel-translatable": "^11.9",
+        "cartalyst/sentinel": "^5.1",
+        "composer/installers": "^1.9",
+        "doctrine/dbal": "^2.12",
+        "fideloper/proxy": "^4.4",
+        "fruitcake/laravel-cors": "^2.0",
+        "guzzlehttp/guzzle": "^7.2",
+        "laracasts/presenter": "^0.2.4",
+        "laravel/framework": "^8.20.1",
+        "laravel/passport": "^10.1",
+        "laravel/telescope": "^4.4",
+        "laravel/tinker": "^2.5",
+        "laravel/ui": "^3.1",
+        "laravelcollective/html": "^6.2",
+        "maatwebsite/laravel-sidebar": "^2.4",
+        "mcamara/laravel-localization": "^1.6",
+        "nwidart/laravel-modules": "^8.2",
+        "ramsey/uuid": "^4.1",
+        "spatie/laravel-fractal": "^5.8",
+        "teamtnt/laravel-scout-tntsearch-driver": "^10.0",
+        "tecnodesignc/adminlte-theme": "^1.0",
+        "tecnodesignc/core-module": "^1.0",
+        "tecnodesignc/dashboard-module": "^1.0",
+        "tecnodesignc/media-module": "^1.0",
+        "tecnodesignc/menu-module": "^1.0",
+        "tecnodesignc/page-module": "^1.0",
+        "tecnodesignc/setting-module": "^1.0",
+        "tecnodesignc/stylist": "^1.0",
+        "tecnodesignc/tag-module": "^1.0",
+        "tecnodesignc/translation-module": "^1.0",
+        "tecnodesignc/user-module": "^1.0",
+        "tecnodesignc/workshop-module": "^1.0",
+        "tightenco/ziggy": "0.9",
+        "yajra/laravel-datatables-oracle": "^9.15",
+        "ext-json": "*"
+    },
+    "require-dev": {
+        "barryvdh/laravel-debugbar": "^3.5",
+        "facade/ignition": "^2.5",
+        "fakerphp/faker": "^1.9.1",
+        "league/flysystem-aws-s3-v3": "^1.0",
+        "laravel/sail": "^0.0.5",
+        "mockery/mockery": "^1.4.2",
+        "orchestra/testbench": "^6.2",
+        "nunomaduro/collision": "^5.0",
+        "phpunit/phpunit": "^9.3.3"
+    },
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/core-module.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/dashboard-module.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/media-module.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/menu-module.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/page-module.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/setting-module.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/tag-module.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/translation-module.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/user-module.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/workshop-module.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/adminlte-theme.git"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/encore-theme.git"
+        }
+    ],
+    "autoload": {
+        "classmap": [
+            "database"
+        ],
+        "psr-4": {
+            "App\\": "app/",
+            "Modules\\": "Modules/"
+        }
+    },
+    "autoload-dev": {
+        "classmap": [
+            "tests/TestCase.php"
+        ]
+    },
+    "extra": {
+        "branch-alias": {
+            "^1.0": "1.0.x-dev"
+        },
+        "laravel": {
+            "dont-discover": []
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan clear-compiled",
+            "cd public_html",
+            "mv * .htaccess ../public_html"
+        ],
+        "pre-update-cmd": [],
+        "post-autoload-dump": [
+            "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
+            "@php artisan package:discover --ansi"
+        ],
+        "post-root-package-install": [
+            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
+        ],
+        "post-create-project-cmd": [
+            "@php artisan key:generate --ansi"
+        ]
+    }
+}
