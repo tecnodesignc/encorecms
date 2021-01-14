@@ -17,7 +17,7 @@ define('LARAVEL_START', microtime(true));
 */
 
 if (file_exists(__DIR__.'/../encore/storage/framework/maintenance.php')) {
-    require __DIR__.'/../encore/storage/framework/maintenance.php';
+    require __DIR__.'/../ecms/storage/framework/maintenance.php';
 }
 
 /*
@@ -31,7 +31,7 @@ if (file_exists(__DIR__.'/../encore/storage/framework/maintenance.php')) {
 |
 */
 
-require __DIR__.'/../encore/vendor/autoload.php';
+require __DIR__.'/../ecms/vendor/autoload.php';
 
 /*
 |--------------------------------------------------------------------------
@@ -44,7 +44,7 @@ require __DIR__.'/../encore/vendor/autoload.php';
 |
 */
 
-$app = require_once __DIR__.'/../bootstrap/app.php';
+$app = require_once __DIR__.'/../ecms/bootstrap/app.php';
 
 $kernel = $app->make(Kernel::class);
 

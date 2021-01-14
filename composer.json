@@ -32,6 +32,7 @@
         "spatie/laravel-fractal": "^5.8",
         "teamtnt/laravel-scout-tntsearch-driver": "^10.0",
         "tecnodesignc/adminlte-theme": "^1.0",
+        "tecnodesignc/blog-module": "~dev-master",
         "tecnodesignc/core-module": "^1.0",
         "tecnodesignc/dashboard-module": "^1.0",
         "tecnodesignc/media-module": "^1.0",
@@ -43,6 +44,7 @@
         "tecnodesignc/translation-module": "^1.0",
         "tecnodesignc/user-module": "^1.0",
         "tecnodesignc/workshop-module": "^1.0",
+        "tecnodesignc/encore-theme": "~dev-master",
         "tightenco/ziggy": "0.9",
         "yajra/laravel-datatables-oracle": "^9.15",
         "ext-json": "*"
@@ -64,6 +66,10 @@
         "sort-packages": true
     },
     "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/tecnodesignc/blog-module.git"
+        },
         {
             "type": "vcs",
             "url": "https://github.com/tecnodesignc/core-module.git"
