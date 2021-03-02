@@ -73,6 +73,10 @@
         },
         {
             "type": "vcs",
+            "url": "https://github.com/tecnodesignc/comment-module"
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/tecnodesignc/core-module.git"
         },
         {
