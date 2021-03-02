@@ -32,7 +32,8 @@
         "spatie/laravel-fractal": "^5.8",
         "teamtnt/laravel-scout-tntsearch-driver": "^10.0",
         "tecnodesignc/adminlte-theme": "^1.0",
-        "tecnodesignc/blog-module": "dev-master",
+        "tecnodesignc/blog-module": "^1.0",
+        "tecnodesignc/comment-module": "dev-master",
         "tecnodesignc/core-module": "^1.0",
         "tecnodesignc/dashboard-module": "^1.0",
         "tecnodesignc/media-module": "^1.0",
@@ -96,6 +97,10 @@
         },
         {
             "type": "vcs",
+            "url": "https://github.com/tecnodesignc/slider-module.git"
+        },
+        {
+            "type": "vcs",
             "url": "https://github.com/tecnodesignc/tag-module.git"
         },
         {
@@ -145,20 +150,16 @@
     "prefer-stable": true,
     "scripts": {
         "post-install-cmd": [
-            "php artisan clear-compiled",
-            "cd public_html",
-            "mv * .htaccess ../public_html"
+            "php artisan clear-compiled"
         ],
         "pre-update-cmd": [],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
-        "post-root-package-install": [
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\""
-        ],
         "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
+            "cd public_html",
+            "mv * .htaccess ../public_html"
         ]
     }
 }

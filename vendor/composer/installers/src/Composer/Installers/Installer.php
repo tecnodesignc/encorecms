@@ -9,6 +9,7 @@ use Composer\IO\IOInterface;
 use Composer\Package\PackageInterface;
 use Composer\Repository\InstalledRepositoryInterface;
 use Composer\Util\Filesystem;
+use React\Promise\PromiseInterface;
 
 class Installer extends LibraryInstaller
 {
@@ -20,7 +21,7 @@ class Installer extends LibraryInstaller
      */
     private $supportedTypes = array(
         'aimeos'       => 'AimeosInstaller',
-        'encore'       => 'EncoreInstaller',
+        'asgard'       => 'AsgardInstaller',
         'attogram'     => 'AttogramInstaller',
         'agl'          => 'AglInstaller',
         'annotatecms'  => 'AnnotateCmsInstaller',
@@ -42,6 +43,7 @@ class Installer extends LibraryInstaller
         'drupal'       => 'DrupalInstaller',
         'elgg'         => 'ElggInstaller',
         'eliasis'      => 'EliasisInstaller',
+        'encore'       => 'EncoreInstaller',
         'ee3'          => 'ExpressionEngineInstaller',
         'ee2'          => 'ExpressionEngineInstaller',
         'ezplatform'   => 'EzPlatformInstaller',
@@ -87,6 +89,7 @@ class Installer extends LibraryInstaller
         'radphp'       => 'RadPHPInstaller',
         'phifty'       => 'PhiftyInstaller',
         'porto'        => 'PortoInstaller',
+        'processwire'  => 'ProcessWireInstaller',
         'redaxo'       => 'RedaxoInstaller',
         'redaxo5'      => 'Redaxo5Installer',
         'reindex'      => 'ReIndexInstaller',
@@ -95,6 +98,7 @@ class Installer extends LibraryInstaller
         'sitedirect'   => 'SiteDirectInstaller',
         'silverstripe' => 'SilverStripeInstaller',
         'smf'          => 'SMFInstaller',
+        'starbug'      => 'StarbugInstaller',
         'sydes'        => 'SyDESInstaller',
         'sylius'       => 'SyliusInstaller',
         'symfony1'     => 'Symfony1Installer',
@@ -160,9 +164,23 @@ class Installer extends LibraryInstaller
 
     public function uninstall(InstalledRepositoryInterface $repo, PackageInterface $package)
     {
-        parent::uninstall($repo, $package);
         $installPath = $this->getPackageBasePath($package);
-        $this->io->write(sprintf('Deleting %s - %s', $installPath, !file_exists($installPath) ? '<comment>deleted</comment>' : '<error>not deleted</error>'));
+        $io = $this->io;
+        $outputStatus = function () use ($io, $installPath) {
+            $io->write(sprintf('Deleting %s - %s', $installPath, !file_exists($installPath) ? '<comment>deleted</comment>' : '<error>not deleted</error>'));
+        };
+
+        $promise = parent::uninstall($repo, $package);
+
+        // Composer v2 might return a promise here
+        if ($promise instanceof PromiseInterface) {
+            return $promise->then($outputStatus);
+        }
+
+        // If not, execute the code right away as parent::uninstall executed synchronously (composer v1, or v2 without async)
+        $outputStatus();
+
+        return null;
     }
 
     /**
@@ -184,23 +202,20 @@ class Installer extends LibraryInstaller
     /**
      * Finds a supported framework type if it exists and returns it
      *
-     * @param  string $type
-     * @return string
+     * @param  string       $type
+     * @return string|false
      */
     protected function findFrameworkType($type)
     {
-        $frameworkType = false;
-
         krsort($this->supportedTypes);
 
         foreach ($this->supportedTypes as $key => $val) {
             if ($key === substr($type, 0, strlen($key))) {
-                $frameworkType = substr($type, 0, strlen($key));
-                break;
+                return substr($type, 0, strlen($key));
             }
         }
 
-        return $frameworkType;
+        return false;
     }
 
     /**

@@ -30,4 +30,50 @@ return [
         'view' => 'core::fields.select-locales',
         'translatable' => false,
     ],
+
+    'id-facebook' => [
+        'description' => 'core::settings.Id facebook',
+        'view' => 'text',
+        'translatable' => false,
+    ],
+    'twitter' => [
+        'description' => 'core::settings.twitter Account',
+        'view' => 'text',
+        'translatable' => false,
+    ],
+    'address' => [
+        'description' => 'core::settings.Address',
+        'view' => 'text',
+        'translatable' => true,
+    ],
+    'email' => [
+        'description' => 'core::settings.mail',
+        'view' => 'text',
+        'translatable' => false,
+    ],
+    'phone' => [
+        'description' => 'core::settings.phone',
+        'view' => 'text',
+        'translatable' => false,
+    ],
+    'facebook' => [
+        'description' => 'core::settings.facebook',
+        'view' => 'text',
+        'translatable' => false,
+    ],
+    'instagram' => [
+        'description' => 'core::settings.phone',
+        'view' => 'text',
+        'translatable' => false,
+    ],
+    'linkedin' => [
+        'description' => 'core::settings.linkedin',
+        'view' => 'text',
+        'translatable' => false,
+    ],
+    'youtube' => [
+        'description' => 'core::settings.Youtube',
+        'view' => 'text',
+        'translatable' => false,
+    ]
 ];

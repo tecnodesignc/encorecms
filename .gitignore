@@ -17,4 +17,5 @@ yarn-error.log
 yarn.lock
 .php_cs.cache
 .idea
+.git/
 composer.lock
