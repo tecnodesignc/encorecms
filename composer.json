@@ -33,7 +33,6 @@
         "teamtnt/laravel-scout-tntsearch-driver": "^10.0",
         "tecnodesignc/adminlte-theme": "^1.0",
         "tecnodesignc/blog-module": "^1.0",
-        "tecnodesignc/comment-module": "dev-master",
         "tecnodesignc/core-module": "^1.0",
         "tecnodesignc/dashboard-module": "^1.0",
         "tecnodesignc/media-module": "^1.0",
@@ -161,9 +160,6 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
-        "post-create-project-cmd": [
-            "cd public_html",
-            "mv * .htaccess ../public_html"
-        ]
+        "post-create-project-cmd": []
     }
 }
