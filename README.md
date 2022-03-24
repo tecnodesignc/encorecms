@@ -18,7 +18,7 @@ composer create-project tecnodes/encore ecms
 
 ```shell
 cd ecms/ 
-mv public_html ../../public_html 
+mv public_html ../public_html 
 ```
 
 
