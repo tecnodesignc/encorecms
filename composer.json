@@ -108,9 +108,7 @@
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
             "@php artisan package:discover --ansi"
         ],
-        "post-create-project-cmd": [
-            "@php artisan key:generate --ansi"
-        ]
+        "post-create-project-cmd": []
     },
     "minimum-stability": "dev",
     "prefer-stable": true
