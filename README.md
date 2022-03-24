@@ -15,16 +15,38 @@
 ```shell
 composer create-project tecnodes/encore ecms
 ```
-`optional`
+
 ```shell
-cd ecms/public_html 
-mv * .* ../../public_html 
+cd ecms/ 
+mv public_html ../../public_html 
 ```
+
+
+**NOTA**:EncoreCMS is configured to leave the public_html folder separate from the system files, if you don't want that configuration you should:
+
+- Modify the `bootstrap/app.php` file whith.
+```php
+// set the public path to this directory
+$app->bind('path.public', function() {
+    return __DIR__.'/../public_html';
+});
+```
+- Modify the public_html/index.php file with:
+```php
+
+if (file_exists($maintenance = __DIR__.'/../storage/framework/maintenance.php')) {
+    require $maintenance;
+}
+
+require __DIR__.'/../vendor/autoload.php';
+
+$app = require_once __DIR__.'/../bootstrap/app.php';
+```
+###Install EncoreCMS
 
 ```shell
 php artisan encore:install
 ```
-
 
 ## How is EncoreCMS different?
 
