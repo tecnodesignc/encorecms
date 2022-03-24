@@ -13,9 +13,6 @@ return [
     | using this caching library. This connection is used when another is
     | not explicitly specified when executing a given caching function.
     |
-    | Supported: "apc", "array", "database", "file",
-    |            "memcached", "redis", "dynamodb"
-    |
     */
 
     'default' => env('CACHE_DRIVER', 'file'),
@@ -30,7 +27,7 @@ return [
     | same cache driver to group types of items stored in your caches.
     |
     | Supported drivers: "apc", "array", "database", "file",
-    |            "memcached", "redis", "dynamodb", "null"
+    |         "memcached", "redis", "dynamodb", "octane", "null"
     |
     */
 
@@ -91,6 +88,9 @@ return [
             'endpoint' => env('DYNAMODB_ENDPOINT'),
         ],
 
+        'octane' => [
+            'driver' => 'octane',
+        ],
         'translations' => [
             'driver' => env('TRANSLATIONS_CACHE_DRIVER', 'file'),
             'path' => storage_path('framework/cache/data/translations'),
@@ -109,6 +109,6 @@ return [
     |
     */
 
-    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache'),
+    'prefix' => env('CACHE_PREFIX', Str::slug(env('APP_NAME', 'laravel'), '_').'_cache_'),
 
 ];

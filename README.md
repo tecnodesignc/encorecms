@@ -1,62 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
-
+<br/>
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <img src="https://raw.githubusercontent.com/tecnodesignc/encorecms/master/resources/assets/images/logo.png" width="300" />
 </p>
 
-## About Laravel
+<br/>
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+> **[EncoreCMS](https://www.tecnodesign.com.ci/encorecms)** is an open-source web application development platform shipped with headless content management system.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+<br/>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+**EncoreCMS** is built  with `laravel 9`, `vue`, `vuex`, `buefy` and `bulma` which follows **Hierarchical Model View Controller (HMVC)** structure for its **Modules** & **Themes**.
 
-## Learning Laravel
+## Quick Start
+```shell
+composer create-project tecnodes/encore ecms
+```
+`optional`
+```shell
+cd ecms/public_html 
+mv * .* ../../public_html 
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+```shell
+php artisan encore:install
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
 
-## Laravel Sponsors
+## How is EncoreCMS different?
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- It's purposed to develop large applications
 
-### Premium Partners
+- Structured (**HMVC**) based modules & themes
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/)**
-- **[OP.GG](https://op.gg)**
+- Encourages to use latest technologies like `Vue`, `Vuex`, `Buefy`
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Why EncoreCMS?
 
-## Code of Conduct
+Well, to answer that, ask a question to yourself: Do you want to develop an enterprise application with content management that doesn't come in your way? If answer is yes, EncoreCMS is for you.
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+## Join us
+- Contribute and raise issues at: [GitHub](https://github.com/tecnodesignc/encorecms)
 
-## Security Vulnerabilities
+We're actively seeking contributors for our [encorecms's documentation](https://github.com/tecnodesignc/encorecms), feel free to send `pull requests`.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<br/>
+
+## Support us
+
+Please consider starring the project to show your and support.
+
+[TecnoDesign](https://tecnodesign.com.co) is a web agency based in Colombia. You'll find an overview of all our open source projects [on github](https://github.com/tecnodesignc).
+
+
+<br/>
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+The MIT License (MIT). Please see [License File](LICENSE) for more information.
+
+<br/>
+
+[license-url]: LICENSE.md
+[license-image]: https://img.shields.io/github/license/tecnodesignc/encorecms?style=for-the-badge
+
+[synk-image]: https://img.shields.io/snyk/vulnerabilities/github/tecnodesignc/encorecms?label=Synk%20Vulnerabilities&style=for-the-badge
+[synk-url]: https://snyk.io/test/github/tecnodesignc/encorecms?targetFile=package.json "synk"
