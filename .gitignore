@@ -1,4 +1,6 @@
+/.phpunit.cache
 /node_modules
+/public/build
 /public/hot
 /public/storage
 /themes
@@ -8,14 +10,18 @@
 !/vendor/composer
 .env
 .env.backup
+.env.production
 .phpunit.result.cache
 docker-compose.override.yml
 Homestead.json
 Homestead.yaml
+auth.json
 npm-debug.log
 yarn-error.log
 yarn.lock
 .php_cs.cache
-.idea
+/.fleet
+/.idea
+/.vscode
 .git/
 composer.lock

@@ -12,13 +12,11 @@
 */
 
 $app = new Illuminate\Foundation\Application(
-    realpath(__DIR__.'/../')
+    $_ENV['APP_BASE_PATH'] ?? dirname(__DIR__)
 );
 
-// set the public path to this directory
-$app->bind('path.public', function() {
-    return __DIR__.'/../../public_html';
-});
+
+$app->usePublicPath(base_path('/../public_html'));
 
 
 

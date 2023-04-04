@@ -9,7 +9,7 @@ use Laravel\Passport\Passport;
 class AuthServiceProvider extends ServiceProvider
 {
     /**
-     * The policy mappings for the application.
+     * The model to policy mappings for the application.
      *
      * @var array<class-string, class-string>
      */
@@ -25,8 +25,7 @@ class AuthServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->registerPolicies();
-        Passport::routes();
-
+        Passport::ignoreRoutes();
         //
     }
 }

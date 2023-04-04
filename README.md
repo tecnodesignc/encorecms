@@ -9,7 +9,7 @@
 
 <br/>
 
-**EncoreCMS** is built  with `laravel 9`, `vue`, `vuex`, `buefy` and `bulma` which follows **Hierarchical Model View Controller (HMVC)** structure for its **Modules** & **Themes**.
+**EncoreCMS** is built  with `laravel 10`, `vue`, `vuex`, `buefy` and `bulma` which follows **Hierarchical Model View Controller (HMVC)** structure for its **Modules** & **Themes**.
 
 ## Quick Start
 ```shell
