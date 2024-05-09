@@ -10,7 +10,7 @@
     ],
     "license": "MIT",
     "require": {
-        "php": "^8.1",
+        "php": "^8.2",
         "ext-json": "*",
         "astrotomic/laravel-translatable": "^11.10",
         "cartalyst/sentinel": "^7.0",
@@ -37,16 +37,16 @@
         "venturecraft/revisionable": "^1.39",
         "yajra/laravel-datatables-oracle": "^10.3.1",
         "tecnodesignc/adminlte-theme": "^2.0",
-        "tecnodesignc/core-module": "^2.1",
-        "tecnodesignc/dashboard-module": "^2.1",
-        "tecnodesignc/media-module": "^2.1",
-        "tecnodesignc/menu-module": "^2.1",
-        "tecnodesignc/page-module": "^2.1",
-        "tecnodesignc/setting-module": "^2.1",
-        "tecnodesignc/tag-module": "^2.1",
-        "tecnodesignc/translation-module": "^2.1",
-        "tecnodesignc/user-module": "^2.1",
-        "tecnodesignc/workshop-module": "^2.1",
+        "tecnodesignc/core-module": "^3.0",
+        "tecnodesignc/dashboard-module": "^3.0",
+        "tecnodesignc/media-module": "^3.0",
+        "tecnodesignc/menu-module": "^3.0",
+        "tecnodesignc/page-module": "^3.0",
+        "tecnodesignc/setting-module": "^3.0",
+        "tecnodesignc/tag-module": "^3.0",
+        "tecnodesignc/translation-module": "^3.0",
+        "tecnodesignc/user-module": "^3.0",
+        "tecnodesignc/workshop-module": "^3.0",
         "tecnodesignc/encore-theme": "^2.0"
     },
     "require-dev": {
@@ -99,7 +99,7 @@
     },
     "extra": {
         "branch-alias": {
-            "^2.0": "2.0.x-dev"
+            "^3.0": "3.0.x-dev"
         },
         "laravel": {
             "dont-discover": []
